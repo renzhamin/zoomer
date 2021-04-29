@@ -1,0 +1,4 @@
+#!/bin/sh
+cd "$HOME/clink"
+# or wherever you cloned the project
+python3 main.py $@ 
