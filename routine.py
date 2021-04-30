@@ -1,5 +1,6 @@
 from datetime import datetime
 from datatypes import Class,Course
+from functools import cmp_to_key
 
 mp = {
 # format is "classAlias" : Course("name of course","id","link")
@@ -19,7 +20,7 @@ mp = {
 }
 
 def curClasses():
-    # forma for adding a Class to a day :
+    # format for adding a Class to a day :
     # Class(mp["classAlias"],startTimeHour,startTimeMinue,endTimeHour,endTimeMinute)
     # for example,ds class at 12:30 to 13:30 (24 hour format)
     # Class(mp["ds"],12,30,13,30)
@@ -63,7 +64,20 @@ def curClasses():
        Monday,Tuesday,Wednesday,Thursday,Friday
     ]
 
-    today = datetime.today().weekday()
-    classlist = routine[today]
+    today = datetime.today()
+    classlist = routine[today.weekday()]
+
+    h = today.hour + today.minute/60.0
+
+    def compare(a,b):
+        if a.hour>=h and b.hour>=h:
+            return a.hour - b.hour
+        if a.hour<h and b.hour>=h:
+            return 1
+        if a.hour<b.hour or (a.hour>=h and b.hour<h):
+            return -1
+        return 1
+
+    classlist.sort(key=cmp_to_key(compare))
 
     return classlist
