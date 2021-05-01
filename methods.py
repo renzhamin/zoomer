@@ -1,4 +1,4 @@
-from routine import curClasses
+from currentClasses import curClasses
 from re import findall
 
 def link(ID,service,parse=0,post=0):

@@ -1,5 +1,5 @@
 from classroomapi import auth
-from routine import mp
+from aliases import mp
 from sys import argv
 import methods
 

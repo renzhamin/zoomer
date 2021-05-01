@@ -1,6 +1,5 @@
 # What is this
 This is for those doing online classes and the zoomer teachers are constantly changing the zoom link so you have to go to the classroom and fetch it for almost every class
-,maybe because they are dumb or they just dont care,most probably both.
 
 With this cli tool the link will be automatically fetched from your classroom
 
@@ -13,10 +12,12 @@ With this cli tool the link will be automatically fetched from your classroom
   `pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib`
 - [Create a google client id](https://developers.google.com/workspace/guides/create-project) and enable classroom api
 - [Create credential](https://developers.google.com/workspace/guides/create-credentials) and download it as credentials.json
+- It takes about 5 minutes to set up but its kinda tedious,so I have created a  [public client id](https://drive.google.com/file/d/1w5SAoNxBRKrdYYmWM0-jWIAoVCD-YHbU) from a dummy google account,so you can test it out right away.Note that client ids have bandwith limits,if other people are using it you will get less speed so if you'r gonna use this tool create your own clinet id
 
 # Editing your courses and routine
-- Refer to routine.py where you can easily change your Course and Routine
-- The routine is in a .py file because of speed advantages you can use classlist.py if you want to use csv files
+- Refer to aliases.py to see how to set up your courses 
+- Refer to Routine/Monday.py to see examples on how to create your routine
+- The routines are in .py file because of speed advantages you can use classlist.py if you want to use csv files
 
 
 # Easy way to use
