@@ -16,7 +16,7 @@ With this cli tool the link will be automatically fetched from your classroom
 
 # Editing your courses and routine
 - Refer to aliases.py to see how to set up your courses 
-- Refer to Routine/Monday.py to see examples on how to create your routine
+- Refer to datatypes.py to see examples on how to create your routine
 - The routines are in .py file because of speed advantages you can use classlist.py if you want to use csv files
 
 
@@ -40,10 +40,6 @@ sudo ln -sf "$HOME/clink/CL"
 - Get Links of a specific class
 
   `CL classAlias`
- 
-- if you want to get the full text of the post that contains the link
-   
-   `CL classAlias 1`
   
 - Get the latest post of a class
  

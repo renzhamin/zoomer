@@ -1,31 +1,25 @@
 from currentClasses import curClasses
-from re import findall
 
-def link(ID,service,parse=0,post=0):
-    results = service.courses().announcements().list(courseId=ID).execute().get('announcements',[])
-
+def link(course,service,post=0):
+    if course.link != '404':
+        return [course.link]
+    results = service.courses().announcements().list(courseId=course.id,pageSize=7).execute().get('announcements',[])
     if post:
-        return results[0]['text']
-
-    for i in results:
-        x = findall(r'(https\S+zoom\S+)',i['text'])
-        if not x:
-            try:
-                x = findall(r'(https\S+zoom\S+)',i['materials'][0]['link']['url'])
-            except:
-                pass
-        if x: return x if parse else i['text']
-    return None
+        return results[0]['text']    
+    results = str(results)
+    if not course.matchMoreThanOnce:
+        return [course.pattern.search(results).group()]
+    x = course.pattern.findall(results)
+    if not x: return ['404']
+    if len(x)>2: x=x[:2]
+    return x
 
 
 def getClassLinks(service):
     classlist = curClasses()
     for i in classlist:
-        x = i.inf.link
-        if x=='404':
-            x = link(i.inf.id,service,parse=1)
-            if x: x='\n'.join(x)
-            else: x='404'
+        x = link(i.inf,service)
+        x = '\n'.join(x)
         print(f'{i.inf.name}\n{x}\nFrom {i.startTime} to {i.endTime}\n')
 
 

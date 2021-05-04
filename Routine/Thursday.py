@@ -1,4 +1,4 @@
-from datatypes import Class,Course
+from datatypes import Class
 from aliases import mp
 
 classes =[

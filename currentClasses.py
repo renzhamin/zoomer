@@ -7,6 +7,7 @@ mpday = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saterday","Sunday"]
 def curClasses():
     today = datetime.today()
     _ = import_module(f'Routine.{mpday[today.weekday()]}')
+#     _ = import_module(f'Routine.{mpday[0]}')
     classlist = _.classes
 
     h = today.hour + today.minute/60.0

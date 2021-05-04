@@ -14,10 +14,10 @@ def main():
             print("No such class")
             return
         if len(argv)==2:
-            x = methods.link(mp[argv[1]].id,service,parse=1)
+            x = methods.link(mp[argv[1]],service)
             print('\n'.join(x))
         else:
-            print(methods.link(mp[argv[1]].id,service,post=(argv[2]=='post')))
+            print(methods.link(mp[argv[1]],service,post=(argv[2]=='post')))
 
 if __name__=='__main__':
     main()
