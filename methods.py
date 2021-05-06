@@ -1,17 +1,19 @@
 from currentClasses import curClasses
 
-def link(course,service,post=0):
+def link(course,service,post=0,raw=0):
     if course.link != '404':
         return [course.link]
     results = service.courses().announcements().list(courseId=course.id,pageSize=7).execute().get('announcements',[])
+    if raw:
+        return results
     if post:
         return results[0]['text']    
     results = str(results)
-    if not course.matchMoreThanOnce:
+    if course.numberofMatches<2:
         return [course.pattern.search(results).group()]
     x = course.pattern.findall(results)
     if not x: return ['404']
-    if len(x)>2: x=x[:2]
+    x=x[:min(course.numberofMatches,len(x))]
     return x
 
 

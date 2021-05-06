@@ -45,7 +45,12 @@ sudo ln -sf "$HOME/clink/CL"
  
   `CL classAlias post`
 
+- Get the raw json file for recent posts
+
+  `CL classAlias raw`
+
 - Get Ids for all your courses
+
   `CL 1`
 
   A file named 'FetchedCourseIds' will be created in the project directory

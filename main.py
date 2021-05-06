@@ -17,7 +17,7 @@ def main():
             x = methods.link(mp[argv[1]],service)
             print('\n'.join(x))
         else:
-            print(methods.link(mp[argv[1]],service,post=(argv[2]=='post')))
+            print(methods.link(mp[argv[1]],service,post=(argv[2]=='post'),raw=(argv[2]=='raw')))
 
 if __name__=='__main__':
     main()

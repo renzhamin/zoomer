@@ -4,12 +4,12 @@ from re import compile
 defaultPattern = compile(r'(https://bdren\.zoom\.us/j/[\d]+[?=\w\d]*)')
 
 class Course:
-    def __init__(self,name,id,link="404",pattern=defaultPattern,matchMoreThanOnce=0):
+    def __init__(self,name,id,link="404",pattern=defaultPattern,numberofMatches=1):
         self.name=name
         self.link=link
         self.id=id
         self.pattern=defaultPattern
-        self.matchMoreThanOnce=matchMoreThanOnce
+        self.numberofMatches=numberofMatches
 
 
 class Class:
