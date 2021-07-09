@@ -1,0 +1,7 @@
+__pycache__
+pyvenv.cfg
+*.json
+lib/
+bin/
+test*
+*.json
