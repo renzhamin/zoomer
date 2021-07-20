@@ -35,28 +35,45 @@ sudo ln -sf "$HOME/clink/CL"
 ```
 
 # Usage
+- Arguments with default values are optional
+
 - To get Links of todays class according to the routine
   just run `CL` with no arguments
-- Get Links of a specific class
+
+- Get recent n posts
+
+  `CL post n m`
+
+  m = maximum number of posts from one course
+
+  default n=5,m=2
+
+- Get the most recent link of a specific class
 
   `CL classAlias`
   
-- Get the latest post of a class
+- Get recent n posts of a class
  
-  `CL classAlias post`
+  `CL classAlias post n`
 
-- Get the raw json file for recent posts
+  default n=2
 
-  `CL classAlias raw`
+- Get the raw json file for recent n posts
+
+  `CL classAlias raw n`
+
+  default n=5
 
 - Get Ids for all your courses
 
-  `CL 1`
+  `CL id`
 
   A file named 'FetchedCourseIds' will be created in the project directory
 
-- To use a differnt google account remove token.json from project folder,edit your courses and routines, run the program and sign in to that account 
+- To use a differnt google account or when token expires remove token.json from project folder,edit your courses and routines, run the program and sign in to that account 
 
 - Screenshot of these examples
 
-![Alt](example.png)
+![Alt](Screenshots/links.png)
+
+![Alt](Screenshots/posts.png)

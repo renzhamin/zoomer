@@ -28,3 +28,9 @@ class Class:
 # for example,ds class at 12:30 to 13:30 (24 hour format)
 # Class(mp["ds"],12,30,13,30)
 # see files in Routine/ for complete examples
+
+class Post:
+    def __init__(self,name,text,date):
+        self.name=name
+        self.text=text
+        self.date=date

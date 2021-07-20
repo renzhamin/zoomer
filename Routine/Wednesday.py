@@ -1,9 +1,9 @@
-from datatypes import Class
+from datatypes import Class,Course
 from aliases import mp
 
 classes =[
-   Class(mp["ds_lab"],9,40,10,40),
-   Class(mp["dbms_lab"],9,40,10,40),
-   Class(mp["dbms"],12,0,13,0),
-   Class(mp["eee"],13,30,14,30)
+   Class(Course("Data Structures Lab 1A",mp["ds"].id,numberofMatches=2),8,30,11,15),
+#    Class(mp["dbms_lab"],8,30,11,15),
+   Class(mp["dbms"],11,30,12,45),
+   Class(mp["eee"],14,15,15,30)
 ]
